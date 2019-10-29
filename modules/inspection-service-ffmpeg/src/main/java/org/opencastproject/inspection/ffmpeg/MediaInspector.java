@@ -138,11 +138,11 @@ public class MediaInspector {
         MimeType mimeType = MimeTypes.fromString(file.getPath());
 
         // The mimetype library doesn't know about audio/video metadata, so the type might be wrong.
-        if ("audio".equals(mimeType.getType()) && metadata.hasVideoStreamMetadata()) {
-          mimeType = MimeTypes.parseMimeType("video/" + mimeType.getSubtype());
-        } else if ("video".equals(mimeType.getType()) && !metadata.hasVideoStreamMetadata()) {
-          mimeType = MimeTypes.parseMimeType("audio/" + mimeType.getSubtype());
-        }
+//        if ("audio".equals(mimeType.getType()) && metadata.hasVideoStreamMetadata()) {
+//          mimeType = MimeTypes.parseMimeType("video/" + mimeType.getSubtype());
+//        } else if ("video".equals(mimeType.getType()) && !metadata.hasVideoStreamMetadata()) {
+//          mimeType = MimeTypes.parseMimeType("audio/" + mimeType.getSubtype());
+//        }
         track.setMimeType(mimeType);
 
         // Audio metadata
@@ -270,11 +270,11 @@ public class MediaInspector {
             MimeType mimeType = MimeTypes.fromURI(track.getURI());
 
             // The mimetype library doesn't know about audio/video metadata, so the type might be wrong.
-            if ("audio".equals(mimeType.getType()) && metadata.hasVideoStreamMetadata()) {
-              mimeType = MimeTypes.parseMimeType("video/" + mimeType.getSubtype());
-            } else if ("video".equals(mimeType.getType()) && !metadata.hasVideoStreamMetadata()) {
-              mimeType = MimeTypes.parseMimeType("audio/" + mimeType.getSubtype());
-            }
+//            if ("audio".equals(mimeType.getType()) && metadata.hasVideoStreamMetadata()) {
+//              mimeType = MimeTypes.parseMimeType("video/" + mimeType.getSubtype());
+//            } else if ("video".equals(mimeType.getType()) && !metadata.hasVideoStreamMetadata()) {
+//              mimeType = MimeTypes.parseMimeType("audio/" + mimeType.getSubtype());
+//            }
             track.setMimeType(mimeType);
           } catch (UnknownFileTypeException e) {
             logger.info("Unable to detect the mimetype for track {} at {}", track.getIdentifier(), track.getURI());
