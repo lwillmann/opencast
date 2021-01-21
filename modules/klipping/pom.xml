@@ -13,8 +13,8 @@
   <properties>
     <opencast.basedir>${project.basedir}/../..</opencast.basedir>
     <checkstyle.skip>false</checkstyle.skip>
-    <klipping.url>https://github.com/Arnei/opencast-editor/releases/download/v0.1-prerelease/oc-editor-2021-01-18.tar.gz</klipping.url>
-    <klipping.sha256>a0ec009a060d10dcd0f3a340c6189cd14d71011852e32de44a811bb723d2b45d</klipping.sha256>
+    <klipping.url>https://github.com/Arnei/opencast-editor/releases/download/v0.1-prerelease/oc-editor-2021-01-21.tar.gz</klipping.url>
+    <klipping.sha256>fd35175757a68813c26321d0e08d07dcf4c0c6109a5ec03ee4947b4db54c8933</klipping.sha256>
   </properties>
   <build>
     <plugins>
