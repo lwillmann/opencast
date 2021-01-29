@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>opencast-klipping</artifactId>
+  <artifactId>opencast-editor</artifactId>
   <packaging>bundle</packaging>
-  <name>Opencast :: klipping</name>
+  <name>Opencast :: editor</name>
   <parent>
     <groupId>org.opencastproject</groupId>
     <artifactId>base</artifactId>
@@ -13,8 +13,8 @@
   <properties>
     <opencast.basedir>${project.basedir}/../..</opencast.basedir>
     <checkstyle.skip>false</checkstyle.skip>
-    <klipping.url>https://github.com/Arnei/opencast-editor/releases/download/v0.1-prerelease/oc-editor-2021-01-21.tar.gz</klipping.url>
-    <klipping.sha256>fd35175757a68813c26321d0e08d07dcf4c0c6109a5ec03ee4947b4db54c8933</klipping.sha256>
+    <editor.url>https://github.com/elan-ev/opencast-editor/releases/download/2021-01-29/oc-editor-2021-01-29.tar.gz</editor.url>
+    <editor.sha256>11d442176a048fe4273c906b8552350c26d465fb54553d69e91f78900ebaf4ee</editor.sha256>
   </properties>
   <build>
     <plugins>
@@ -23,16 +23,16 @@
         <artifactId>download-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>fetch-klipping</id>
+            <id>fetch-editor</id>
             <goals>
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>${klipping.url}</url>
-              <sha256>${klipping.sha256}</sha256>
+              <url>${editor.url}</url>
+              <sha256>${editor.sha256}</sha256>
               <unpack>true</unpack>
               <checkSignature>true</checkSignature>
-              <outputDirectory>${project.build.directory}/classes/klipping/</outputDirectory>
+              <outputDirectory>${project.build.directory}/classes/editor/</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -49,9 +49,9 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Build-Number>${buildNumber}</Build-Number>
-            <Private-Package>klipping.*</Private-Package>
-            <Http-Alias>/klipping</Http-Alias>
-            <Http-Classpath>/klipping</Http-Classpath>
+            <Private-Package>editor.*</Private-Package>
+            <Http-Alias>/editor</Http-Alias>
+            <Http-Classpath>/editor</Http-Classpath>
             <Http-Welcome>index.html</Http-Welcome>
           </instructions>
         </configuration>
